@@ -67,7 +67,7 @@ foreach(target ${AMDGPU_TARGETS})
 endforeach()
 
 # Target link libraries
-if(CMAKE_CXX_COMPILER MATCHES ".*/hcc$")
+if(CMAKE_CXX_COMPILER MATCHES ".*/hcc$" OR CMAKE_CXX_COMPILER MATCHES ".*/hipcc$")
   target_link_libraries(rocsparse PRIVATE hip::device)
   foreach(target ${AMDGPU_TARGETS})
     target_link_libraries(rocsparse PRIVATE --amdgpu-target=${target})
