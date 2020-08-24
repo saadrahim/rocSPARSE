@@ -1,5 +1,5 @@
 /* ************************************************************************
- * Copyright (c) 2019 Advanced Micro Devices, Inc.
+ * Copyright 2019-2020 Advanced Micro Devices, Inc.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -635,7 +635,7 @@ void testing_csric0(const Arguments& arg)
                                                               : rocsparse_status_success);
 
         double gpu_solve_time_used = 0;
-    
+
         // Solve run
         for(int iter = 0; iter < number_hot_calls; ++iter)
         {
