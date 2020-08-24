@@ -12,7 +12,7 @@ import java.nio.file.Path
 def runCompileCommand(platform, project, jobName, boolean debug=false)
 {
     project.paths.construct_build_prefix()
-    
+
     def command = """#!/usr/bin/env bash
             set -x
             pushd  ${project.paths.project_build_prefix}/docs
@@ -38,7 +38,7 @@ def runCompileCommand(platform, project, jobName, boolean debug=false)
                 reportTitles: "Documentation"])
 }
 
-def runCI = 
+def runCI =
 {
     nodeDetails, jobName->
 
@@ -60,7 +60,7 @@ def runCI =
     buildProject(prj , formatCheck, nodes.dockerArray, compileCommand, null, null, staticAnalysis)
 }
 
-ci: { 
+ci: {
     String urlJobName = auxiliary.getTopJobName(env.BUILD_URL)
 
     properties(auxiliary.addCommonProperties([pipelineTriggers([cron('0 1 * * 6')])]))
