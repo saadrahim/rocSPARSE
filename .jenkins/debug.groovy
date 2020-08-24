@@ -24,7 +24,7 @@ def runCI =
 
     def commonGroovy
 
-    boolean formatCheck = true
+    boolean formatCheck = false
 
     def compileCommand =
     {
